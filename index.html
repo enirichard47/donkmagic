@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080808" />
+    <meta name="description" content="DonkMagic on Solana. A community-driven meme project. While others debate, DonkMagic builds. Powered by memes, backed by chaos, fueled by community." />
+    <meta property="og:title" content="DonkMagic | Running the Room" />
+    <meta property="og:description" content="No politics. No promises. Just pure DonkMagic energy." />
+    <meta property="og:image" content="images/donk.jpg" />
+    <title>DonkMagic | Running the Room</title>
+    <link rel="icon" href="images/donk.jpg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+      <div class="preloader-content">
+        <img class="preloader-logo" src="images/donk.jpg" alt="DonkMagic Loading" />
+        <div class="preloader-text">LOADING DONKMAGIC ENERGY...</div>
+        <div class="preloader-bar-container">
+          <div class="preloader-bar" id="preloader-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header" id="top">
+      <a class="brand" href="#top" aria-label="DonkMagic home">
+        <img class="brand-logo" src="images/donk.jpg" alt="DonkMagic logo" />
+        <span>DonkMagic</span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="#lore">Lore</a>
+        <a href="#token">DonkMagicomics</a>
+        <a href="#buy">How to buy</a>
+        <a href="#roadmap">Agenda</a>
+        <a href="#gallery">Memes</a>
+        <a class="nav-cta js-buy-link" href="#buy">Buy $DonkMagic</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="header-socials" aria-label="DonkMagic social links">
+          <a class="social-circle js-x-link" href="#community" aria-label="Follow DonkMagic on X"><span aria-hidden="true">X</span></a>
+          <a class="social-circle js-telegram-link" href="#community" aria-label="Join DonkMagic on Telegram">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21.8 3.2 18.7 20c-.2 1.2-.9 1.5-1.9.9l-4.7-3.5-2.3 2.2c-.2.3-.5.5-1 .5l.4-4.8 8.7-7.9c.4-.3-.1-.5-.6-.2L6.5 14 1.9 12.5c-1-.3-1-1 .2-1.5L20 4.1c.8-.3 1.6.2 1.8-.9Z"/></svg>
+          </a>
+          <a class="social-circle js-tiktok-link" href="#community" aria-label="Follow DonkMagic on TikTok">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.73 4.12 1.12 1.09 2.63 1.63 4.17 1.67v3.93c-1.74-.01-3.43-.65-4.76-1.79-.17-.15-.33-.31-.48-.48v6.17c.01 4.13-2.61 7.82-6.58 9.23-3.96 1.42-8.45-.11-10.74-3.79C-2.5 15.35-.91 10.37 3.51 8.52c3.55-1.48 7.74-.04 9.01 3.65.17.49.27 1 .3 1.51-.01-4.55-.01-9.11-.01-13.66h-.29z"/></svg>
+          </a>
+          <a class="social-circle js-youtube-link" href="#community" aria-label="Follow DonkMagic on YouTube">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a class="social-circle social-circle-dex js-dex-link" href="#buy" aria-label="View DonkMagic on Dexscreener">
+            <img class="dexscreener-logo" src="images/dexscreener-logo.png" alt="" />
+          </a>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <picture class="hero-media" aria-hidden="true">
+          <source media="(max-width: 980px)" srcset="images/heroo.jpg" />
+          <img src="images/heroo.jpg" alt="DonkMagic hero" />
+        </picture>
+        <div class="leaf leaf-one" aria-hidden="true">◆</div>
+        <div class="leaf leaf-two" aria-hidden="true">◆</div>
+        <div class="hero-copy">
+          <p class="eyebrow">THE WORLD LEADERS ARE TALKING. ONLY ONE MASCOT RUNS THE ROOM.</p>
+          <h1>THIS IS THE AGE<br />OF <em>DONKMAGIC.</em></h1>
+          <p class="hero-lede">While others debate, <strong>DonkMagic builds</strong>. While markets panic, DonkMagic smiles. From the White House to the blockchain, everyone wants a seat at the $DonkMagic table. A community-driven meme project: no politics, no promises, just pure DonkMagic energy.</p>
+          <div class="hero-actions">
+            <a class="button button-gold js-buy-link" href="#buy">Enter the Room <span>↗</span></a>
+            <a class="button button-ghost js-x-link" href="#community">Follow the Chaos</a>
+          </div>
+          <div class="contract-mini">
+            <span>CA</span>
+            <code class="js-contract-full">TBA</code>
+            <button class="copy-button js-copy" type="button">COPY</button>
+          </div>
+        </div>
+
+        <a class="scroll-cue" href="#lore"><span>Scroll to the narrative</span> ↓</a>
+      </section>
+
+      <div class="ticker" aria-label="DonkMagic slogans">
+        <div class="ticker-track">
+          <span>$DonkMagic</span><b>✦</b><span>BACKED BY CHAOS</span><b>✦</b><span>RUNS THE ROOM</span><b>✦</b><span>THE NARRATIVE</span><b>✦</b><span>PURE DONKMAGIC ENERGY</span><b>✦</b><span>NO POLITICS. NO PROMISES.</span><b>✦</b>
+          <span>$DonkMagic</span><b>✦</b><span>BACKED BY CHAOS</span><b>✦</b><span>RUNS THE ROOM</span><b>✦</b><span>THE NARRATIVE</span><b>✦</b><span>PURE DONKMAGIC ENERGY</span><b>✦</b><span>NO POLITICS. NO PROMISES.</span><b>✦</b>
+        </div>
+      </div>
+
+      <section class="section lore" id="lore">
+        <div class="section-kicker">01 / THE NARRATIVE</div>
+        <div class="lore-grid">
+          <div class="lore-copy reveal">
+            <h2>HE IS THE<br /><span>NARRATIVE.</span></h2>
+            <p class="big-copy">World leaders argue. Markets panic. DonkMagic just smiles and builds.</p>
+            <p>In a world of endless debates, empty promises, and political circus, only one mascot commands the room. DonkMagic isn't here to make sweet promises or talk economics. He is here to build, smile, and run the blockchain.</p>
+            <p>From the White House to the trenches of the decentralized web, everyone is pulling up a chair to the $DonkMagic table. No politics. No promises. Just pure, unadulterated DonkMagic energy. Join the tribe that rules the room.</p>
+            <div class="signature">— The Mascot of Chaos</div>
+          </div>
+          <figure class="torn-card reveal">
+            <img src="images/meme1.jpg" alt="DonkMagic running the room" loading="lazy" />
+            <figcaption><span>Chapter I</span> Taking a seat at the table.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="manifesto" aria-label="DonkMagic manifesto">
+        <p>NO POLITICS. NO <i>PROMISES.</i></p>
+        <p>JUST PURE DONKMAGIC <i>ENERGY.</i></p>
+        <p>DONKMAGIC IS THE <i>NARRATIVE.</i></p>
+      </section>
+
+      <section class="section token" id="token">
+        <div class="section-heading reveal">
+          <div>
+            <div class="section-kicker light">02 / DONKMAGICOMICS</div>
+            <h2>THE CHAOS<br /><span>ECONOMY.</span></h2>
+          </div>
+          <p>No promises, no taxes. Just pure community power backing the mascot who runs the room.</p>
+        </div>
+
+        <div class="token-grid">
+          <div class="token-visual reveal">
+            <img src="images/meme2.jpg" alt="DonkMagic economy visual" loading="lazy" />
+            <div class="orbit-text">DONKMAGIC • SOLANA • DONKMAGIC • SOLANA • DONKMAGIC • SOLANA • DONKMAGIC • SOLANA •</div>
+          </div>
+          <div class="stats reveal">
+            <article>
+              <span>01</span>
+              <p>Total supply</p>
+              <strong>9 BILLION</strong>
+            </article>
+            <article>
+              <span>02</span>
+              <p>Buy / sell tax</p>
+              <strong>0%</strong>
+            </article>
+            <article>
+              <span>03</span>
+              <p>Liquidity</p>
+              <strong>TBA ON LAUNCH</strong>
+            </article>
+            <article>
+              <span>04</span>
+              <p>Ticker</p>
+              <strong>$DonkMagic</strong>
+            </article>
+          </div>
+        </div>
+
+        <div class="ca-bar reveal">
+          <div><span>CONTRACT ADDRESS</span><code class="js-contract-full">TBA</code></div>
+          <button class="button button-gold js-copy" type="button">Copy address</button>
+        </div>
+        <p class="fine-print">*LP and safety parameters will be finalized and renounced immediately at launch.</p>
+      </section>
+
+      <section class="section stats-chart-section" id="stats">
+        <div class="section-heading reveal">
+          <div>
+            <div class="section-kicker">03 / DONKMAGIC METRICS</div>
+            <h2>CHAOS<br /><span>METRICS.</span></h2>
+          </div>
+          <p>Track the $DonkMagic takeover in real-time. Live stats and charts will display automatically here post-launch.</p>
+        </div>
+
+        <div class="stats-grid-4 reveal">
+          <div class="stat-card">
+            <span>Market Cap</span>
+            <strong id="stat-mcap">TBA</strong>
+          </div>
+          <div class="stat-card">
+            <span>Price (USD)</span>
+            <strong id="stat-price">TBA</strong>
+          </div>
+          <div class="stat-card">
+            <span>24h Volume</span>
+            <strong id="stat-volume">TBA</strong>
+          </div>
+          <div class="stat-card">
+            <span>24h Change</span>
+            <strong id="stat-change">TBA</strong>
+          </div>
+        </div>
+
+        <div class="chart-wrapper reveal">
+          <div class="chart-container" id="chart-container">
+            <!-- Loaded dynamically in script.js to fallback to placeholder when unlaunched -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section how-buy" id="buy">
+        <div class="section-kicker">04 / THE BLUEPRINT</div>
+        <h2 class="reveal">HOW TO BUY<br /><span>$DonkMagic.</span></h2>
+        <div class="steps">
+          <article class="step reveal">
+            <div class="step-number">1</div>
+            <div class="step-icon">◇</div>
+            <h3>GET A SOLANA WALLET</h3>
+            <p>Download Phantom, Solflare, or your preferred wallet from the app store. Keep your seed phrase safe and secure.</p>
+          </article>
+          <article class="step reveal">
+            <div class="step-number">2</div>
+            <div class="step-icon">◈</div>
+            <h3>ACQUIRE SOME SOL</h3>
+            <p>Purchase SOL from an exchange or swap it into your wallet. You will need it to cover Solana's tiny network gas fees.</p>
+          </article>
+          <article class="step reveal">
+            <div class="step-number">3</div>
+            <div class="step-icon">➶</div>
+            <h3>SWAP FOR $DonkMagic</h3>
+            <p>When the launch goes live, connect to Raydium or Jupiter, paste the official contract address, and swap SOL for $DonkMagic.</p>
+          </article>
+        </div>
+        <a class="button button-dark js-buy-link" href="#">Buy $DonkMagic <span>↗</span></a>
+      </section>
+
+      <section class="section roadmap" id="roadmap">
+        <div class="roadmap-image reveal">
+          <img src="images/meme3.jpg" alt="DonkMagic building the narrative" loading="lazy" />
+          <div class="image-label">WHILE OTHERS DEBATE, DONKMAGIC BUILDS.</div>
+        </div>
+        <div class="roadmap-copy">
+          <div class="section-kicker light">05 / THE AGENDA</div>
+          <h2 class="reveal">THE PLAN FOR<br /><span>TAKEOVER.</span></h2>
+          <div class="quest-list">
+            <article class="reveal">
+              <span>ACT I</span>
+              <div><h3>THE SPARK</h3><p>Launch the mascot on Solana, initialize community social raids, and ignite the meme engine.</p></div>
+            </article>
+            <article class="reveal">
+              <span>ACT II</span>
+              <div><h3>THE RAMPAGE</h3><p>Viral marketing campaign, global listings, and bringing the $DonkMagic energy to every corner of crypto.</p></div>
+            </article>
+            <article class="reveal">
+              <span>ACT III</span>
+              <div><h3>THE DOMINANCE</h3><p>Strategic partnerships, ecosystem expansion, and cementing DonkMagic as the undisputed mascot running the room.</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section gallery" id="gallery">
+        <div class="gallery-heading">
+          <div class="section-kicker">06 / THE CHAOS BOARD</div>
+          <h2 class="reveal">DONKMAGIC IS<br /><span>HERE.</span></h2>
+        </div>
+        <div class="gallery-grid">
+          <figure class="wide reveal"><img src="images/hero.jpg" alt="DonkMagic running the room" loading="lazy" /><figcaption>The $DonkMagic Table</figcaption></figure>
+          <figure class="reveal"><img src="images/meme1.jpg" alt="DonkMagic spreading chaos" loading="lazy" /><figcaption>Spreading Chaos</figcaption></figure>
+          <figure class="reveal"><img src="images/meme2.jpg" alt="DonkMagic assembly" loading="lazy" /><figcaption>Running the Room</figcaption></figure>
+          <figure class="reveal"><img src="images/meme3.jpg" alt="DonkMagic building the narrative" loading="lazy" /><figcaption>Building the Narrative</figcaption></figure>
+          <figure class="castle reveal"><img src="images/ape.jpg" alt="DonkMagic the ultimate mascot" loading="lazy" /><figcaption>The Ultimate Mascot</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="section faq-section" id="faq">
+        <div class="faq-container">
+          <div class="section-heading reveal">
+            <div>
+              <div class="section-kicker">07 / DONKMAGIC DECLASSIFIED</div>
+              <h2>QUESTIONS &<br /><span>ANSWERS.</span></h2>
+            </div>
+            <p>Everything you need to know about DonkMagic and our mission on Solana.</p>
+          </div>
+
+          <div class="faq-list reveal">
+            <article class="faq-item">
+              <h3 class="faq-question">What is DonkMagic ($DonkMagic)? <span class="faq-toggle-icon">+</span></h3>
+              <p class="faq-answer">DonkMagic is a community-driven meme project and the ultimate mascot running the room. Powered by memes, backed by chaos, and fueled by community, $DonkMagic is the narrative itself. We don't follow trends—we set them.</p>
+            </article>
+            <article class="faq-item">
+              <h3 class="faq-question">When is the launch? <span class="faq-toggle-icon">+</span></h3>
+              <p class="faq-answer">The official launch is happening this Saturday! The contract address and exact launch details will be announced exclusively on our official X channels and Telegram. Beware of fake contracts and copycats!</p>
+            </article>
+            <article class="faq-item">
+              <h3 class="faq-question">Is there a pre-sale or taxes? <span class="faq-toggle-icon">+</span></h3>
+              <p class="faq-answer">No politics, no promises, no taxes. As a pure meme project, the launch will be 100% fair with 0% buy/sell tax, ensuring everyone has equal access to the $DonkMagic table from day one.</p>
+            </article>
+            <article class="faq-item">
+              <h3 class="faq-question">How do I join the tribe? <span class="faq-toggle-icon">+</span></h3>
+              <p class="faq-answer">Simply follow us on X, join our Telegram portal, and unleash your pure DonkMagic energy. We raid, build memes, and dominate the charts together.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section socials-section" id="socials">
+        <div class="section-heading reveal">
+          <div>
+            <div class="section-kicker">08 / SOCIAL CHANNELS</div>
+            <h2>JOIN THE<br /><span>DONKMAGIC TRIBE.</span></h2>
+          </div>
+          <p>Get the latest updates, engage in community raids, and talk with the tribe around the globe.</p>
+        </div>
+
+        <div class="socials-grid reveal">
+          <article class="social-card">
+            <div class="social-icon-wrapper">
+              <svg viewBox="0 0 24 24"><path d="M18.2 3H21.5L14.3 11.2L22.8 22H16.2L11 15.2L5.1 22H1.8L9.5 13.2L1.3 3H8.1L12.8 9.2L18.2 3ZM17 20H18.9L7.2 4.5H5.1L17 20Z"/></svg>
+            </div>
+            <h3>X / Twitter</h3>
+            <p>Stay up to date with raids, official announcements, and news.</p>
+            <a class="social-card-btn js-x-link" href="#">Follow DonkMagic</a>
+          </article>
+
+          <article class="social-card">
+            <div class="social-icon-wrapper">
+              <svg viewBox="0 0 24 24"><path d="M21.8 3.2 18.7 20c-.2 1.2-.9 1.5-1.9.9l-4.7-3.5-2.3 2.2c-.2.3-.5.5-1 .5l.4-4.8 8.7-7.9c.4-.3-.1-.5-.6-.2L6.5 14 1.9 12.5c-1-.3-1-1 .2-1.5L20 4.1c.8-.3 1.6.2 1.8-.9Z"/></svg>
+            </div>
+            <h3>Telegram</h3>
+            <p>Join the general portal and speak directly with thousands of members.</p>
+            <a class="social-card-btn js-telegram-link" href="#">Join Tribe</a>
+          </article>
+
+          <article class="social-card">
+            <div class="social-icon-wrapper">
+              <svg viewBox="0 0 24 24"><path d="M18.2 3H21.5L14.3 11.2L22.8 22H16.2L11 15.2L5.1 22H1.8L9.5 13.2L1.3 3H8.1L12.8 9.2L18.2 3ZM17 20H18.9L7.2 4.5H5.1L17 20Z"/></svg>
+            </div>
+            <h3>Founder X</h3>
+            <p>Follow the developer and mastermind behind DonkMagic.</p>
+            <a class="social-card-btn js-founder-x-link" href="#">Follow Founder</a>
+          </article>
+
+          <article class="social-card">
+            <div class="social-icon-wrapper">
+              <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.73 4.12 1.12 1.09 2.63 1.63 4.17 1.67v3.93c-1.74-.01-3.43-.65-4.76-1.79-.17-.15-.33-.31-.48-.48v6.17c.01 4.13-2.61 7.82-6.58 9.23-3.96 1.42-8.45-.11-10.74-3.79C-2.5 15.35-.91 10.37 3.51 8.52c3.55-1.48 7.74-.04 9.01 3.65.17.49.27 1 .3 1.51-.01-4.55-.01-9.11-.01-13.66h-.29z"/></svg>
+            </div>
+            <h3>TikTok</h3>
+            <p>Watch short clips, animations, and viral memes of DonkMagic.</p>
+            <a class="social-card-btn js-tiktok-link" href="#">Watch TikTok</a>
+          </article>
+
+          <article class="social-card">
+            <div class="social-icon-wrapper">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </div>
+            <h3>YouTube</h3>
+            <p>Subscribe for full video edits, updates, and community highlights.</p>
+            <a class="social-card-btn js-youtube-link" href="#">Subscribe</a>
+          </article>
+
+          <article class="social-card">
+            <div class="social-icon-wrapper">
+              <img class="dexscreener-logo" src="images/dexscreener-logo.png" alt="Dexscreener" />
+            </div>
+            <h3>Dexscreener</h3>
+            <p>Watch the green candles fly, analyze token stats, and check live trades.</p>
+            <a class="social-card-btn js-dex-link" href="#">View Chart</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="community-call" id="community">
+        <div class="community-call-content reveal">
+          <h2>ARE YOU READY FOR<br /><em>DONKMAGIC ENERGY?</em></h2>
+          <p>Pull up a chair to the $DonkMagic table. The launch is coming this Saturday, and chaos waits for no one.</p>
+          <div class="community-call-buttons">
+            <a class="button button-gold js-telegram-link" href="#">Join the Telegram</a>
+            <a class="button button-ghost js-x-link" href="#">Follow on X</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="#top">
+        <img class="brand-logo" src="images/donk.jpg" alt="DonkMagic logo" />
+        <span>DonkMagic</span>
+      </a>
+      <p>DonkMagic is a community-driven meme project and the mascot running the room. No politics. No promises. Just pure DonkMagic energy.</p>
+      <div class="footer-links">
+        <a href="#lore">Lore</a>
+        <a href="#token">Token</a>
+        <a href="#buy">Buy</a>
+        <a class="js-x-link" href="#">X</a>
+        <a class="js-telegram-link" href="#">Telegram</a>
+        <a class="js-tiktok-link" href="#">TikTok</a>
+        <a class="js-youtube-link" href="#">YouTube</a>
+      </div>
+      <div class="footer-dyor">
+        <span class="warning-icon">⚠</span>
+        <p><strong>DO YOUR OWN RESEARCH:</strong> $DonkMagic is a community-driven meme project created for entertainment purposes only and has no utility. Cryptocurrencies are highly volatile and speculative. Please do your own research (DYOR) and exercise caution before making any transactions.</p>
+      </div>
+      <small>© <span id="year"></span> DonkMagic. Memes are not financial advice.</small>
+    </footer>
+
+    <!-- Background Audio -->
+    <audio id="bg-music" src="images/donkmusic.mp3" loop></audio>
+
+    <!-- Floating Audio Control Widget -->
+    <div class="music-widget-wrapper">
+      <div class="music-tooltip">Play DonkMusic!</div>
+      <button class="music-toggle-btn" id="music-toggle" type="button" aria-label="Toggle background music">
+        <div class="music-bars">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <div class="music-icons-container">
+          <!-- Play Icon (Muted state) -->
+          <svg class="music-icon-play" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M8 5v14l11-7z" />
+          </svg>
+          <!-- Pause Icon (Playing state) -->
+          <svg class="music-icon-pause" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+          </svg>
+        </div>
+      </button>
+    </div>
+
+    <div class="toast" role="status" aria-live="polite">Contract copied!</div>
+    <script src="script.js"></script>
+  </body>
+</html>
