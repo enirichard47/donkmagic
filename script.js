@@ -52,7 +52,7 @@ function initChart() {
     if (PROJECT.contract === "TBA" || !PROJECT.contract) {
       chartContainer.innerHTML = `
         <div class="chart-placeholder">
-          <div class="placeholder-icon">🫏</div>
+          <div class="placeholder-icon">🪄</div>
           <h3>CHART LAUNCHING SOON</h3>
           <p>The official contract address has not launched yet. Once announced, the live Dexscreener chart will load here.</p>
           <a class="button button-gold js-telegram-link" href="${PROJECT.telegramUrl}" target="_blank" rel="noopener noreferrer">Join Telegram for Launch <span>↗</span></a>

@@ -288,6 +288,34 @@ img {
     padding: 105px 4vw 65px clamp(28px, 7vw, 118px);
 }
 
+.launch-badge {
+    align-self: flex-start;
+    padding: 10px 24px;
+    background: var(--lime);
+    color: var(--cream);
+    border: 3px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--ink);
+    font-family: var(--display);
+    font-size: clamp(18px, 2.2vw, 32px);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 18px;
+    margin-bottom: 28px;
+    transform: rotate(-1.5deg);
+    display: inline-block;
+    animation: badgePulse 2s infinite alternate;
+}
+
+@keyframes badgePulse {
+    0% {
+        transform: rotate(-1.5deg) scale(1);
+    }
+    100% {
+        transform: rotate(-1.5deg) scale(1.03);
+    }
+}
+
 .eyebrow {
     display: flex;
     align-items: center;
@@ -1330,6 +1358,11 @@ footer small {
         padding-top: 140px;
         padding-bottom: 80px;
         text-align: center;
+    }
+
+    .launch-badge {
+        align-self: center;
+        margin-inline: auto;
     }
 
     .hero-copy .eyebrow, .hero-actions {
