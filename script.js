@@ -1,13 +1,15 @@
 const PROJECT = {
-  contract: "TBA",
-  buyUrl: "https://t.me/DONKstribe",
+  contract: "HmjrTGcHRDYgx1oxeys7JvmLAfbocvSCrXdZTXRKpump",
+  buyUrl: "https://pump.fun/coin/HmjrTGcHRDYgx1oxeys7JvmLAfbocvSCrXdZTXRKpump",
   xUrl: "https://x.com/DonkMagic",
   telegramUrl: "https://t.me/DONKstribe",
-  dexUrl: "#",
+  dexUrl: "https://dexscreener.com/solana/HmjrTGcHRDYgx1oxeys7JvmLAfbocvSCrXdZTXRKpump",
+  pumpUrl: "https://pump.fun/coin/HmjrTGcHRDYgx1oxeys7JvmLAfbocvSCrXdZTXRKpump",
   founderXUrl: "https://x.com/Eternal_HeroS",
   tiktokUrl: "https://www.tiktok.com/@eternal_heros?_r=1&_t=ZG-98nIgKiUjq5",
   youtubeUrl: "https://youtube.com/@eternal_heros?si=r6qqDXnXNwkwuTYo",
 };
+
 
 const menuButton = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".site-nav");
@@ -41,6 +43,7 @@ wireLinks(".js-buy-link", PROJECT.buyUrl);
 wireLinks(".js-x-link", PROJECT.xUrl);
 wireLinks(".js-telegram-link", PROJECT.telegramUrl);
 wireLinks(".js-dex-link", PROJECT.dexUrl);
+wireLinks(".js-pump-link", PROJECT.pumpUrl);
 wireLinks(".js-founder-x-link", PROJECT.founderXUrl);
 wireLinks(".js-tiktok-link", PROJECT.tiktokUrl);
 wireLinks(".js-youtube-link", PROJECT.youtubeUrl);
@@ -122,7 +125,7 @@ document.querySelectorAll(".faq-item").forEach((item) => {
   });
 });
 
-// Dexscreener API Data Fetching
+// Dexscreener API Data Fetching with GeckoTerminal fallback for pump.fun tokens
 async function fetchDexData() {
   if (PROJECT.contract === "TBA" || !PROJECT.contract) {
     document.getElementById("stat-mcap").textContent = "TBA";
@@ -131,54 +134,76 @@ async function fetchDexData() {
     document.getElementById("stat-change").textContent = "TBA";
     return;
   }
+
+  const formatUsd = (num) => {
+    if (num >= 1e6) return `$${(num / 1e6).toFixed(2)}M`;
+    if (num >= 1e3) return `$${(num / 1e3).toFixed(1)}K`;
+    return `$${num.toFixed(2)}`;
+  };
+
+  const formatPrice = (num) => {
+    if (num === 0) return "$0.00";
+    if (num < 0.000001) return `$${num.toFixed(8)}`;
+    if (num < 0.0001) return `$${num.toFixed(6)}`;
+    if (num < 0.01) return `$${num.toFixed(4)}`;
+    return `$${num.toFixed(2)}`;
+  };
+
+  const formatChange = (num) => {
+    const prefix = num > 0 ? "+" : "";
+    return `${prefix}${num.toFixed(2)}%`;
+  };
+
+  const updateUI = (price, mcap, volume, change) => {
+    document.getElementById("stat-mcap").textContent = formatUsd(mcap);
+    document.getElementById("stat-price").textContent = formatPrice(price);
+    document.getElementById("stat-volume").textContent = formatUsd(volume);
+    
+    const changeEl = document.getElementById("stat-change");
+    changeEl.textContent = formatChange(change);
+    if (change < 0) {
+      changeEl.style.color = "var(--gold)"; // Red highlight in theme
+    } else {
+      changeEl.style.color = "var(--lime)"; // Green highlight in theme
+    }
+  };
+
+  // Try Dexscreener first (for graduated tokens)
   try {
     const response = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${PROJECT.contract}`);
-    if (!response.ok) throw new Error("Failed to fetch data");
-    const data = await response.json();
-    
-    const pair = data.pairs && data.pairs[0];
-    if (pair) {
-      const price = parseFloat(pair.priceUsd || 0);
-      const mcap = parseFloat(pair.marketCap || pair.fdv || 0);
-      const volume = parseFloat((pair.volume && pair.volume.h24) || 0);
-      const change = parseFloat((pair.priceChange && pair.priceChange.h24) || 0);
-
-      const formatUsd = (num) => {
-        if (num >= 1e6) return `$${(num / 1e6).toFixed(2)}M`;
-        if (num >= 1e3) return `$${(num / 1e3).toFixed(1)}K`;
-        return `$${num.toFixed(2)}`;
-      };
-
-      const formatPrice = (num) => {
-        if (num === 0) return "$0.00";
-        if (num < 0.0001) return `$${num.toFixed(6)}`;
-        if (num < 0.01) return `$${num.toFixed(4)}`;
-        return `$${num.toFixed(2)}`;
-      };
-
-      const formatChange = (num) => {
-        const prefix = num > 0 ? "+" : "";
-        return `${prefix}${num.toFixed(2)}%`;
-      };
-
-      document.getElementById("stat-mcap").textContent = formatUsd(mcap);
-      document.getElementById("stat-price").textContent = formatPrice(price);
-      document.getElementById("stat-volume").textContent = formatUsd(volume);
-      
-      const changeEl = document.getElementById("stat-change");
-      changeEl.textContent = formatChange(change);
-      if (change < 0) {
-        changeEl.style.color = "var(--gold)"; // Red highlight in theme
-      } else {
-        changeEl.style.color = "var(--lime)"; // Green highlight in theme
+    if (response.ok) {
+      const data = await response.json();
+      const pair = data.pairs && data.pairs[0];
+      if (pair) {
+        const price = parseFloat(pair.priceUsd || 0);
+        const mcap = parseFloat(pair.marketCap || pair.fdv || 0);
+        const volume = parseFloat((pair.volume && pair.volume.h24) || 0);
+        const change = parseFloat((pair.priceChange && pair.priceChange.h24) || 0);
+        updateUI(price, mcap, volume, change);
+        return;
       }
     }
   } catch (error) {
-    console.error("Dexscreener data load error:", error);
-    document.getElementById("stat-mcap").textContent = "TBA";
-    document.getElementById("stat-price").textContent = "TBA";
-    document.getElementById("stat-volume").textContent = "TBA";
-    document.getElementById("stat-change").textContent = "TBA";
+    console.warn("Dexscreener fetch error, falling back to GeckoTerminal:", error);
+  }
+
+  // Fallback to GeckoTerminal (for pump.fun bonding curve tokens)
+  try {
+    const response = await fetch(`https://api.geckoterminal.com/api/v2/networks/solana/tokens/${PROJECT.contract}/pools`);
+    if (response.ok) {
+      const data = await response.json();
+      const pool = data.data && data.data[0];
+      if (pool && pool.attributes) {
+        const price = parseFloat(pool.attributes.base_token_price_usd || 0);
+        const mcap = parseFloat(pool.attributes.fdv_usd || pool.attributes.market_cap_usd || 0);
+        const volume = parseFloat((pool.attributes.volume_usd && pool.attributes.volume_usd.h24) || 0);
+        const change = parseFloat((pool.attributes.price_change_percentage && pool.attributes.price_change_percentage.h24) || 0);
+        updateUI(price, mcap, volume, change);
+        return;
+      }
+    }
+  } catch (error) {
+    console.error("GeckoTerminal fetch data error:", error);
   }
 }
 

@@ -198,6 +198,10 @@ img {
     fill: currentColor;
 }
 
+.social-circle svg[fill="none"] {
+    fill: none;
+}
+
 .social-circle-dex {
     overflow: hidden;
     padding: 0;
